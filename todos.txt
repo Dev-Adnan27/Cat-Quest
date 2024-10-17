@@ -1,0 +1,25 @@
+- [X] Project Setup
+- [ ] Adding Start Screen
+- [ ] Platform Creation
+- [X] Player Creation
+- [ ] Adding Platform Image
+- [ ] Adding Player Images
+- [X] Player Movement
+- [ ] Collision Detection
+- [ ] Scroll the Background
+- [ ] Adding Background
+- [ ] Adding Game Over Screen
+- [ ] Adding Win Screen
+- [ ] Win Scenario
+- [ ] Adding Sound Effects
+- [ ] Adding Music
+- [ ] Adding Score
+- [ ] Adding Lives
+- [ ] Add Coins
+- [ ] Player Collecting Coins
+- [ ] Add Obstacles
+- [ ] Player Avoiding Obstacles
+- [ ] Add Enemies
+- [ ] Player Fighting Enemies
+- [ ] Add Save Data
+- [ ] Add Loading Screen
