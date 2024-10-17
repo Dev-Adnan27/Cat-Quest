@@ -17,6 +17,47 @@ const platforms = [
     new Platform(700, canvas.height - 350, 300, 30),
     new Platform(200, canvas.height - 450, 250, 30),
 ];
+
+// Add this before creating platforms and starting the game
+function loadAssets(callback) {
+    const brickImage = new Image();
+    brickImage.src = 'assets/images/bricks.png';
+    brickImage.onload = () => {
+        Platform.brickImage = brickImage;
+        callback();
+    };
+}
+
+// Wrap the existing initialization code in a function
+function initGame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    if (!gameOver) {
+        platforms.forEach(platform => {
+            platform.position.x -= platformScrollSpeed;
+            if (platform.position.x + platform.size.width < 0) {
+                platform.position.x = canvas.width;
+            } else if (platform.position.x > canvas.width) {
+                platform.position.x = -platform.size.width;
+            }
+        });
+        
+        player.update(ctx);
+        platforms.forEach(platform => {
+            platform.draw(ctx);
+            checkCollision(player, platform);
+        });
+        
+        checkGameOver();
+    }
+    player.draw(ctx);
+    
+    requestAnimationFrame(animate);
+}
+
+// Load assets before starting the game
+loadAssets(initGame);
+
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
