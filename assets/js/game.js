@@ -91,6 +91,7 @@ function checkGameOver() {
         player.velocity.x = 0;
         player.velocity.y = 0;
         platformScrollSpeed = 0;
+        player.position.y = canvas.height - player.size.height;
     }
 }
 
